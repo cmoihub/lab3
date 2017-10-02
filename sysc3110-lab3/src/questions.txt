@@ -1,0 +1,24 @@
+Tight vs Loose Coupling
+Coupling refers to manner and degree of interdependence between software modules
+Loose coupling promotes flexibility and reusability. 
+Loosely coupled classes are fairly independent so that if one is modified the dev doesn't have to go out of his way
+to rewrite multiple other classes. This would not be the case for tightly coupled classes as making a change would
+ripple across other classes unnecessarily
+
+Encapsulation - involves restricting direct access to some of an object's components
+This is easily done in java using private and protected modifiers rather than public, so their implementations are hidden
+If a class wants to then access/modify such components they would need getters and setters.
+
+Class Cohesion - manner and degree to which tasks performed by as single software module are related to one another
+In a java class optimally class functions should depend on one another. If an animal class has a move function, it may depend on
+a lookWithEyes() function, a useBrainToDetermineIfThereIsDangerFunction() et cetera
+If this is not the case and the tasks are not related this may mean the class is doing too much and should be split/broken down
+
+Law of Demeter
+- Each unit should have only limited knowledge about other units: only units "closely" related to the current unit.
+- Each unit should only talk to its friends; don't talk to strangers.
+- Only talk to your immediate friends
+
+A good example of breaking this law is: objectA.getObjectB().doSomething();
+This is because this doesn't respect the fact that object A may not reference object B in the future
+or the fact that the doSomething() method may modified/deleted later on. It forces object A to depend on object B
