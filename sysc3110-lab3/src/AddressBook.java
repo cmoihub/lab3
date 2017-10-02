@@ -19,6 +19,10 @@ public class AddressBook {
 		return null;
 	}
 	
+	public void empty() {
+		
+	}
+	
 	public static void main (String args[]) {
 		BuddyInfo buddy = new BuddyInfo();
 		AddressBook ab = new AddressBook();
